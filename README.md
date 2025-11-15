@@ -28,7 +28,7 @@ A **new directory** was created for this profile:
 src/trace-generators/batch_then_drain/
 ```
 
-A new generator file was added:
+A new generator file was added by following the given main.cpp for huffman_coding:
 
 ```
 src/trace-generators/batch_then_drain/main.cpp
