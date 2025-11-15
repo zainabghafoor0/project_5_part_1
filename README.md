@@ -53,7 +53,8 @@ traces/batch_then_drain/
 ## 1.1 Build the Batch-then-Drain Trace Generator
 
 ```bash
-g++ -std=c++20     src/trace-generators/batch_then_drain/main.cpp     utils/TraceConfig.cpp     -o batch_then_drain_trace
+g++ -std=c++20 src/trace-generators/batch_then_drain/main.cpp utils/TraceConfig.cpp -o batch_then_drain_trace
+
 ```
 
 ---
@@ -61,7 +62,16 @@ g++ -std=c++20     src/trace-generators/batch_then_drain/main.cpp     utils/Trac
 ## 1.2 Build the Harness
 
 ```bash
-g++ -std=c++20     src/harness/main.cpp     utils/TraceConfig.cpp     utils/comparator.cpp     src/implementations/LinearBaseLine/LinearBaseLine.cpp     src/implementations/BinaryHeapInVector/BinaryHeapInVector.cpp     src/implementations/BinomialQueues/BinomialQueue.cpp     src/implementations/BinomialQueues/BQnode.cpp     src/implementations/BinomialQueues/SmallIntMixedOperations.cpp     src/implementations/BinomialQueues/InvertedListDictionary.cpp     src/implementations/Oracle/QuadraticOracle.cpp     -o harness
+g++ -std=c++20 \
+  src/harness/main.cpp \
+  src/implementations/BinaryHeapInVector/BinaryHeapInVector.cpp \
+  src/implementations/BinomialQueues/BinomialQueue.cpp \
+  src/implementations/BinomialQueues/BQnode.cpp \
+  src/implementations/LinearBaseLine/LinearBaseLine.cpp \
+  src/implementations/Oracle/QuadraticOracle.cpp \
+  utils/comparator.cpp \
+  utils/TraceConfig.cpp \
+  -o harness
 ```
 
 ---
